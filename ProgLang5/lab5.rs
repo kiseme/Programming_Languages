@@ -32,7 +32,15 @@ let mut Lines: Vec<Vec<f32>> = vec![];
     Lines.push(coordinates);
   }
   
-  for j in 0..Lines.len(){
+  for j in 1..Lines.len(){
+  let A1: f32 = Lines[0][1] - Lines[0][3];
+  let B1: f32 = Lines[0][2] - Lines[0][0];
+  let A2: f32 = Lines[j][1] - Lines[j][3];
+  let B2: f32 = Lines[j][2] - Lines[j][0];
+    if A1*B2-A2*B1 != 0.0 {
+      println!("пересеклось");
+      
+    }
     println!("{:?}", Lines[j]); 
   }
 }
