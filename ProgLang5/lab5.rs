@@ -36,9 +36,12 @@ let mut Lines: Vec<Vec<f32>> = vec![];
   let B1: f32 = Lines[0][2] - Lines[0][0];
   let A2: f32 = Lines[j][1] - Lines[j][3];
   let B2: f32 = Lines[j][2] - Lines[j][0];
+  let C1: f32 = Lines[0][0] * Lines[0][3] - Lines[0][2] * Lines[0][1];
+  let C2: f32 = Lines[j][0] * Lines[j][3] - Lines[j][2] * Lines[j][1];
     if A1*B2-A2*B1 != 0.0 {
       println!("пересеклось");
-      
+      let X: f32 = -((C1*B2)-(C2*B1))/((A1*B2)-(A2*B1));
+      let Y: f32 = -((A1*C2)-(A2*C1))/((A1*B2)-(A2*B1));
     }
     println!("{:?}", Lines[j]); 
   }
