@@ -18,18 +18,17 @@ fn main() {
 let mut Lines: Vec<Vec<f32>> = vec![];
 
   for j in 0..N{
-    let mut coordinates: Vec<f32> = vec![];
-    println!("enter coordinates x1,y1 x2,y2"); 
+    let mut points: Vec<f32> = vec![];
+    println!("enter points x1,y1 x2,y2"); 
     let mut s = String::new(); 
     
     io::stdin().read_line(&mut s);
     let mut v: Vec<_> = s.split(|q| q == ',' || q == ' ' || q == '\n').collect(); 
     for i in 0..4 { 
-      let num: f32 = v[i].trim().parse() 
-        .expect("Пожалуйста, введите число!"); 
-      coordinates.push(num); 
+      let num: f32 = v[i].trim().parse().expect("введите число"); 
+      points.push(num); 
     }
-    Lines.push(coordinates);
+    Lines.push(points);
   }
   
   for j in 1..Lines.len(){
